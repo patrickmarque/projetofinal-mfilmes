@@ -1,0 +1,138 @@
+ngb-carousel {
+  /* max-width: 700px; */
+  margin: 0px auto;
+  width: 100%;
+}
+
+ngb-carousel img {
+  width: 100%;
+  outline: none;
+}
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  z-index: 20;
+}
+
+.carousel-control-next {
+  z-index: 20;
+}
+
+.carousel-indicators {
+  z-index: 20;
+}
+
+h3 {
+  text-align: center;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+/* .card-link {
+  
+} */
+
+.card-img-overlay {
+  display: block !important;
+}
+
+.fa-star {
+  color: gold;
+  text-shadow: 0 0 3px #000;
+  font-size: larger;
+}
+
+.fa-star:hover {
+  transform: scale(1.5);
+}
+
+.star {
+  border: none;
+  padding: 0;
+  background: none;
+  float: right;
+}
+
+.card-title {
+  text-align: right;
+}
+
+.badge.badge-success.note {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin-left: -6px !important;
+  margin-top: -17px !important;
+  border-radius: 20px;
+}
+
+.rated {
+  font-family: "Roboto";
+  /* font-size: 22px; */
+  text-shadow: 0 0 3px #000;
+  margin-left: 0px;
+}
+
+.rated:hover {
+  transform: scale(1.5);
+}
+
+.card-title.titulo {
+  text-align: center;
+  margin-top: 100%;
+  text-shadow: 2px 2px 5px #000;
+  font-size: 26px !important;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-title.titulo {
+    margin-top: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-title.titulo {
+    margin-top: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-title.titulo {
+    margin-top: 63%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-title.titulo {
+    margin-top: 63%;
+  }
+}
+
+.badge.badge-primary.note {
+  font-size: 14px;
+  margin-right: 5px;
+}

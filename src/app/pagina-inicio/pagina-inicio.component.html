@@ -1,0 +1,171 @@
+<ngb-carousel>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img
+        src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[0].backdrop_path}}"
+        alt="Angular Carousel 1"
+      />
+    </div>
+			<div class="carousel-caption">
+				<h3>MFilmes</h3>
+				<p>Site de Filmes</p>
+			</div>
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img
+        src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[0].backdrop_path}}"
+        alt="Angular Carousel 2"
+      />
+    </div>
+			<div class="carousel-caption">
+				<h3>{{filmeTendenciaSemana[0].title}}</h3>
+				<p>Filme mais Procurado da Semana.</p>
+			</div>
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img
+        src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[1].backdrop_path}}"
+        alt="Angular Carousel 3"
+      />
+    </div>
+			<div class="carousel-caption">
+				<h3>{{filmeTendenciaSemana[1].title}}</h3>
+				<p>2º Filme mais Procurado da Semana.</p>
+			</div>
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img
+        src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[2].backdrop_path}}"
+        alt="Angular Carousel 4"
+      />
+    </div>
+			<div class="carousel-caption">
+				<h3>{{filmeTendenciaSemana[2].title}}</h3>
+				<p>3º Filme mais Procurado da Semana.</p>
+			</div>
+	</ng-template>
+</ngb-carousel>
+
+<br />
+<br />
+
+<h3 class="display-4 py-2 text-truncate">Bem Vindo a MFilmes. <br /></h3>
+
+	<br />
+	<br />
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2>Filmes mais Populares da Semana.</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 py-3" *ngFor="let filme of filmeTendenciaSemana">
+						<div class="card">
+							<img
+              class="card-img"
+              src="{{URL_FILME_IMAGE}}{{filme.poster_path}}"
+              alt="Poster"
+              (error)="onImgError($event)"
+            />
+
+							<div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+								<h4 class="card-title">
+									<button class="star" (click)="adicionarFilmeFavoritos(filme)">
+                  <i class="fa fa-star"></i>
+                </button>
+								</h4>
+								<span
+                class="badge badge-success note"
+              >
+                <h2 class="rated">
+                  {{filme.vote_average.toFixed(1)}}
+                </h2>
+              </span>
+
+								<p class="card-title titulo">
+									<span class="badge badge-primary note" *ngFor="let id of filme.genre_ids">
+                    {{generoFilme(id)}}
+                  </span><br>
+									{{filme.title}}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><br>
+
+	<div class="container sites">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 py-3">
+				<div class="card">
+					<img
+              class="card-img"
+              src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[2].poster_path}}"
+              alt="Poster"
+              (error)="onImgError($event)"
+            />
+
+					<div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+
+
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 py-3">
+				<div class="card">
+					<img
+              class="card-img"
+              src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[2].poster_path}}"
+              alt="Poster"
+              (error)="onImgError($event)"
+            />
+
+					<div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+
+
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 py-3">
+				<div class="card">
+					<img
+              class="card-img"
+              src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[2].poster_path}}"
+              alt="Poster"
+              (error)="onImgError($event)"
+            />
+
+					<div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+
+
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 py-3">
+				<div class="card">
+					<img
+              class="card-img"
+              src="{{URL_FILME_IMAGE}}{{filmeTendenciaSemana[2].poster_path}}"
+              alt="Poster"
+              (error)="onImgError($event)"
+            />
+
+					<div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
