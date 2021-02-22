@@ -1,0 +1,3 @@
+.ng-valid:not(form) {
+  border-color: #42a948;
+}

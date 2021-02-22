@@ -9,12 +9,14 @@ import { Genero } from "../model/genero";
   styleUrls: ["./pagina-adicionar-favoritos.component.css"]
 })
 export class PaginaAdicionarFavoritosComponent implements OnInit {
+  nome:string
   URL_FILME_IMAGE: string;
   filmePesquisa: Filme[];
   generosFilme: Genero[];
   imageFail: string;
 
   constructor(private filme: FilmesService) {
+    this.nome = "";
     this.filmePesquisa = [];
     this.generosFilme = [];
     this.URL_FILME_IMAGE = this.filme.obterURLImagem();
@@ -27,7 +29,7 @@ export class PaginaAdicionarFavoritosComponent implements OnInit {
   }
 
   consultarFilmesPesquisa(): void {
-    this.filme.obterFilmesTendenciaSemana().subscribe(res => {
+    this.filme.obterFilmesPesquisa(this.nome).subscribe(res => {
       this.filmePesquisa = res.results;
     });
   }

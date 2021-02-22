@@ -1,3 +1,129 @@
-<p>
-pagina-adicionar-favoritos works!
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h3 class="display-4 py-2 text-truncate">
+				Pesquisar <br />
+				<small class="text-muted">Filmes</small>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<form class="form-horizontal" #formValid="ngForm" action="">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="name">Nome do Filme:</label>
+					<div class="col-sm-10">
+						<input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Nome..."
+              [(ngModel)]="nome"
+              #nm="ngModel"
+              required
+              minlength="2"
+              maxlength="30"
+            /> <br>
+						<div *ngIf="nm.invalid && (nm.dirty || nm.touched)" class="alert alert-danger">
+							Nome é obrigatório e deve conter no mínimo 2 caracteres.
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input
+              class="btn btn-primary"
+              id="btn"
+              type="button"
+              value="Pesquisar"
+              [disabled]="formValid.invalid"
+              (click)=" consultarFilmesPesquisa()"
+            />
+          </div>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<br />
+<br />
+<br />
+
+
+	<div class="container"  *ngIf="filmePesquisa.length > 0">
+		<div class="row">
+			<div class="col-12">
+				<h2>Filmes Encontrados.</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 py-3" *ngFor="let filme of filmePesquisa">
+						<div class="card">
+							<img
+              class="card-img"
+              src="{{URL_FILME_IMAGE}}{{filme.poster_path}}"
+              alt="Poster"
+              (error)="onImgError($event)"
+            />
+
+							<div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+								<h4 class="card-title">
+									<button class="star" (click)="adicionarFilmeFavoritos(filme)">
+                  <i class="fa fa-star"></i>
+                </button>
+								</h4>
+								<span
+                class="badge badge-success note"
+              >
+                <h2 class="rated">
+                  {{filme.vote_average.toFixed(1)}}
+                </h2>
+              </span>
+
+								<p class="card-title titulo">
+									<span class="badge badge-primary note" *ngFor="let id of filme.genre_ids">
+                    {{generoFilme(id)}}
+                  </span><br>
+									{{filme.title}}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><br><br><br>br
+
+	<div class="d-flex flex-wrap links">
+		<div class="col-lg-6 col-md-6 col-sm-12 p-4 text-center">
+			<i class="fa fa-star"></i>
+			<h4>Titulo</h4>
+			<p>Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or
+				task lists.</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 p-4 text-center">
+			<i class="fa fa-star"></i>
+			<h4>Titulo</h4>
+			<p>Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or
+				task lists.</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 p-4 text-center">
+			<i class="fa fa-star"></i>
+			<h4>Titulo</h4>
+			<p>Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or
+				task lists.</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 p-4 text-center">
+			<i class="fa fa-star"></i>
+			<h4>Titulo</h4>
+			<p>Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or
+				task lists.</p>
+		</div>
+	</div>
+
