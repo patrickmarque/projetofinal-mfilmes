@@ -9,7 +9,7 @@ import { Genero } from "../model/genero";
   styleUrls: ["./pagina-adicionar-favoritos.component.css"]
 })
 export class PaginaAdicionarFavoritosComponent implements OnInit {
-  nome:string
+  nome: string;
   URL_FILME_IMAGE: string;
   filmePesquisa: Filme[];
   generosFilme: Genero[];
@@ -24,8 +24,7 @@ export class PaginaAdicionarFavoritosComponent implements OnInit {
 
   ngOnInit() {
     this.consultarGenerosFilme();
-    this.imageFail =
-      "https://www.drclaudioeduardo.com.br/images/icon-depoimento.png";
+    this.imageFail = "https://static.thenounproject.com/png/556270-200.png";
   }
 
   consultarFilmesPesquisa(): void {
@@ -46,6 +45,7 @@ export class PaginaAdicionarFavoritosComponent implements OnInit {
 
   onImgError(event: any): void {
     event.target.src = this.imageFail;
+    event.target.style = "height: 374px;";
   }
 
   adicionarFilmeFavoritos(filme: Filme) {

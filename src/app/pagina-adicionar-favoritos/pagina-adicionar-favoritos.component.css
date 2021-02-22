@@ -1,3 +1,117 @@
 .ng-valid:not(form) {
   border-color: #42a948;
 }
+
+h3 {
+  text-align: center;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+/* .card-link {
+  
+} */
+
+.card-img-overlay {
+  display: block !important;
+}
+
+.fa-star {
+  color: gold;
+  text-shadow: 0 0 3px #000;
+  font-size: larger;
+}
+
+.fa-star:hover {
+  transform: scale(1.5);
+}
+
+.star {
+  border: none;
+  padding: 0;
+  background: none;
+  float: right;
+}
+
+.card-title {
+  text-align: right;
+}
+
+.badge.badge-success.note {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin-left: -6px !important;
+  margin-top: -17px !important;
+  border-radius: 20px;
+}
+
+.rated {
+  font-family: "Roboto";
+  /* font-size: 22px; */
+  text-shadow: 0 0 3px #000;
+  margin-left: 0px;
+}
+
+.rated:hover {
+  transform: scale(1.5);
+}
+
+.card {
+  overflow: hidden !important;
+}
+
+.card-title.titulo {
+  text-align: center;
+  margin-top: 100%;
+  text-shadow: 2px 2px 5px #000;
+  font-size: 26px !important;
+  overflow: hidden;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-title.titulo {
+    margin-top: 100%;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-title.titulo {
+    margin-top: 100%;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-title.titulo {
+    margin-top: 50%;
+  }
+  h3 {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-title.titulo {
+    margin-top: 50%;
+  }
+  h3 {
+    text-align: left;
+  }
+}
+
+.badge.badge-primary.note {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.links {
+  background-color: #4287f5;
+}
