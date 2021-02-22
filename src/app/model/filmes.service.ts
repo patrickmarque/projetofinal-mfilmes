@@ -33,8 +33,12 @@ export class FilmesService {
     );
   }
 
-  obterFilmesPesquisa() {
-    return null;
+  obterFilmesPesquisa(query: string): Observable<any> {
+    return this.http.get<any>(
+      `${this.BASE_URL}/search/movie?${this.chave}&${this.linguagem}&${
+        this.regiao
+      }&page=1&include_adult=false&query=${query}`
+    );
   }
 
   obterURLImagem(): string {
