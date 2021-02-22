@@ -29,10 +29,12 @@ export class FilmesService {
 
   obterGeneroFilmes(): Observable<any> {
     return this.http.get<any>(
-      `${this.BASE_URL}/genre/movie/list?${this.chave}&${
-        this.linguagem
-      }`
+      `${this.BASE_URL}/genre/movie/list?${this.chave}&${this.linguagem}`
     );
+  }
+
+  obterFilmesPesquisa() {
+    return null;
   }
 
   obterURLImagem(): string {
